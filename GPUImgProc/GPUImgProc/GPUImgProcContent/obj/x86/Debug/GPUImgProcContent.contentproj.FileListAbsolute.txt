@@ -1,0 +1,1 @@
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProcContent\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -18,6 +18,10 @@ namespace GPUImgProc
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D imageToProcess;
+        Effect guassianBlur;
+        int scrHeight;
+        int scrWidth;
 
         public Game1()
         {
@@ -46,6 +50,12 @@ namespace GPUImgProc
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            imageToProcess = this.Content.Load<Texture2D>("snowboarder");
+            guassianBlur = this.Content.Load<Effect>("guassianblur");
+
+            scrHeight = graphics.GraphicsDevice.PresentationParameters.BackBufferHeight;
+            scrWidth = graphics.GraphicsDevice.PresentationParameters.BackBufferWidth;
 
             // TODO: use this.Content to load your game content here
         }
@@ -83,9 +93,18 @@ namespace GPUImgProc
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            DrawImage();
+            spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawImage(){
+            Rectangle rec = new Rectangle(0, 0, scrWidth, scrHeight);
+
+            
+            spriteBatch.Draw(imageToProcess, rec, Color.White);
         }
     }
 }

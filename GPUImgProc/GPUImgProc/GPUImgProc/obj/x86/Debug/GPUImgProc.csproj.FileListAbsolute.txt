@@ -1,0 +1,7 @@
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\snowboarder.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\GPUImgProc.exe
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\GPUImgProc.pdb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.exe
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.pdb
