@@ -19,13 +19,19 @@ namespace GPUImgProc
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D imageToProcess;
-        Effect guassianBlur;
+        Effect sobel;
         int scrHeight;
         int scrWidth;
+        VertexPositionTexture[] vertices;
+        Int32 currentTechnique = 0;
+        KeyboardState previousState = Keyboard.GetState();
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            // Set back buffer resolution  
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
         }
 
@@ -37,7 +43,8 @@ namespace GPUImgProc
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            
+            
 
             base.Initialize();
         }
@@ -51,8 +58,18 @@ namespace GPUImgProc
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            imageToProcess = this.Content.Load<Texture2D>("snowboarder");
-            guassianBlur = this.Content.Load<Effect>("guassianblur");
+            imageToProcess = this.Content.Load<Texture2D>("batman");
+            sobel = this.Content.Load<Effect>("Sobel");
+
+            vertices = new VertexPositionTexture[4];
+            vertices[0].Position = new Vector3(-1, 1, 0);
+            vertices[0].TextureCoordinate = new Vector2(0, 0);
+            vertices[1].Position = new Vector3(1, 1, 0);
+            vertices[1].TextureCoordinate = new Vector2(1, 0);
+            vertices[2].Position = new Vector3(-1, -1, 0);
+            vertices[2].TextureCoordinate = new Vector2(0, 1);
+            vertices[3].Position = new Vector3(1, -1, 0);
+            vertices[3].TextureCoordinate = new Vector2(1, 1);
 
             scrHeight = graphics.GraphicsDevice.PresentationParameters.BackBufferHeight;
             scrWidth = graphics.GraphicsDevice.PresentationParameters.BackBufferWidth;
@@ -80,6 +97,14 @@ namespace GPUImgProc
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.Down) && !previousState.IsKeyDown(Keys.Down))
+                currentTechnique = (currentTechnique + 1) % sobel.Techniques.Count;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Up) && !previousState.IsKeyDown(Keys.Up))
+                currentTechnique = (currentTechnique + sobel.Techniques.Count - 1) % sobel.Techniques.Count;
+
+            previousState = Keyboard.GetState();
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -91,9 +116,9 @@ namespace GPUImgProc
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             DrawImage();
             spriteBatch.End();
 
@@ -102,9 +127,13 @@ namespace GPUImgProc
 
         private void DrawImage(){
             Rectangle rec = new Rectangle(0, 0, scrWidth, scrHeight);
-
             
-            spriteBatch.Draw(imageToProcess, rec, Color.White);
+            sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
+            sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
+
+            sobel.CurrentTechnique.Passes[0].Apply();
+            GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, vertices, 0, 2);
+            //spriteBatch.Draw(imageToProcess, rec, Color.White);
         }
     }
 }

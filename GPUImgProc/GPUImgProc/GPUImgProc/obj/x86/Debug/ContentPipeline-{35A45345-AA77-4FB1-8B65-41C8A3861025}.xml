@@ -2,13 +2,22 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>snowboarder.jpg</Source>
-      <Name>snowboarder</Name>
+      <Source>Sobel.fx</Source>
+      <Name>Sobel</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb</Output>
+      <Time>2012-04-24T12:35:44.336403-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Batman Edge Detect Test.jpg</Source>
+      <Name>batman</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\snowboarder.xnb</Output>
-      <Time>2012-04-19T11:46:39.6353406-05:00</Time>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb</Output>
+      <Time>2012-04-24T12:01:05.617507-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
