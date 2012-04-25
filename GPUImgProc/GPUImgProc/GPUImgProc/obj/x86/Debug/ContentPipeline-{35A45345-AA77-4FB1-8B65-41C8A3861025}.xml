@@ -8,7 +8,16 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb</Output>
-      <Time>2012-04-24T12:35:44.336403-05:00</Time>
+      <Time>2012-04-25T09:59:54.3411397-05:00</Time>
+    </Item>
+    <Item>
+      <Source>chromakey.fx</Source>
+      <Name>chromakey</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromakey.xnb</Output>
+      <Time>2012-04-25T10:38:13.8454099-05:00</Time>
     </Item>
     <Item>
       <Source>Batman Edge Detect Test.jpg</Source>
@@ -18,6 +27,24 @@
       <Options>None</Options>
       <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb</Output>
       <Time>2012-04-24T12:01:05.617507-05:00</Time>
+    </Item>
+    <Item>
+      <Source>greenscreen.jpg</Source>
+      <Name>greenscreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\greenscreen.xnb</Output>
+      <Time>2012-04-25T10:22:18.4546259-05:00</Time>
+    </Item>
+    <Item>
+      <Source>chromaback.jpg</Source>
+      <Name>chromaback</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromaback.xnb</Output>
+      <Time>2012-04-25T10:23:07.7721742-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

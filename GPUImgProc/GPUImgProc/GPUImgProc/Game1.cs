@@ -19,12 +19,17 @@ namespace GPUImgProc
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D imageToProcess;
+        Texture2D greenScreen;
+        Texture2D backScreen;
+        Effect chroma;
         Effect sobel;
         int scrHeight;
         int scrWidth;
+        private SamplerState clampState;
         VertexPositionTexture[] vertices;
         Int32 currentTechnique = 0;
         KeyboardState previousState = Keyboard.GetState();
+
 
         public Game1()
         {
@@ -32,6 +37,9 @@ namespace GPUImgProc
             // Set back buffer resolution  
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
+            clampState = new SamplerState();
+            clampState.AddressU = TextureAddressMode.Clamp;
+            clampState.AddressV = TextureAddressMode.Clamp;
             Content.RootDirectory = "Content";
         }
 
@@ -59,7 +67,10 @@ namespace GPUImgProc
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             imageToProcess = this.Content.Load<Texture2D>("batman");
+            greenScreen = this.Content.Load<Texture2D>("greenscreen");
+            backScreen = this.Content.Load<Texture2D>("chromaback");
             sobel = this.Content.Load<Effect>("Sobel");
+            chroma = this.Content.Load<Effect>("chromakey");
 
             vertices = new VertexPositionTexture[4];
             vertices[0].Position = new Vector3(-1, 1, 0);
@@ -125,14 +136,22 @@ namespace GPUImgProc
             base.Draw(gameTime);
         }
 
-        private void DrawImage(){
-            Rectangle rec = new Rectangle(0, 0, scrWidth, scrHeight);
-            
+        private void DrawImage()
+        {
+
+           // graphics.GraphicsDevice.SamplerStates[0] = clampState;
             sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
             sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
 
             sobel.CurrentTechnique.Passes[0].Apply();
-            GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, vertices, 0, 2);
+
+            /*chroma.Parameters["green"].SetValue(greenScreen);
+            chroma.Parameters["back"].SetValue(backScreen);
+
+            chroma.CurrentTechnique = chroma.Techniques["Chroma"];
+            chroma.CurrentTechnique.Passes[0].Apply();*/
+            graphics.GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, vertices, 0, 2);
+            
             //spriteBatch.Draw(imageToProcess, rec, Color.White);
         }
     }

@@ -1,8 +1,11 @@
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromakey.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\greenscreen.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromaback.xnb
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\GPUImgProc.exe
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\GPUImgProc.pdb
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.exe
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.pdb
-C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb
-C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb

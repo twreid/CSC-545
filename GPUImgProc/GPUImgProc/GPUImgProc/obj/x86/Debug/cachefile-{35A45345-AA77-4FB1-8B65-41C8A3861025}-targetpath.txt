@@ -1,2 +1,5 @@
 Content\Sobel.xnb
+Content\chromakey.xnb
 Content\batman.xnb
+Content\greenscreen.xnb
+Content\chromaback.xnb

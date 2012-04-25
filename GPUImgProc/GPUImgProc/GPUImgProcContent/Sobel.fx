@@ -51,7 +51,7 @@ float4 PSBlackWhite(VertexShaderOutput input) : COLOR0
  float luminance = dot(original.rgb,  float3(0.30f, 0.59f, 0.11f));
  
  
- color.rgb = (luminance > 0.5f) ? 1.0f : 0.0f;
+ color.rgb = (luminance > 0.3f) ? 1.0f : 0.0f;
  
  return float4(color, 1);
 }
