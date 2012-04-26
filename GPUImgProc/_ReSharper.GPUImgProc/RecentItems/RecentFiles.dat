@@ -1,22 +1,17 @@
 ﻿<RecentFiles>
   <RecentFiles>
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1337" fromTop="24" />
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="2223" fromTop="28" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="6087" fromTop="22" />
+    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="479" fromTop="0" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="1214" fromTop="1" />
   </RecentFiles>
   <RecentEdits>
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="2181" fromTop="8" />
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="3006" fromTop="18" />
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="3006" fromTop="7" />
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="3333" fromTop="14" />
-    <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="3453" fromTop="22" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="896" fromTop="12" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="956" fromTop="10" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1634" fromTop="28" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1362" fromTop="16" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1478" fromTop="21" />
     <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="965" fromTop="15" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="2632" fromTop="17" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="2690" fromTop="17" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="755" fromTop="22" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:Sobel.fx" caret="1118" fromTop="17" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="820" fromTop="6" />
@@ -24,16 +19,21 @@
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="445" fromTop="12" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="343" fromTop="5" />
     <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="823" fromTop="15" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="1382" fromTop="11" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5897" fromTop="17" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5816" fromTop="16" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="6004" fromTop="17" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5923" fromTop="16" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="129" fromTop="7" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="235" fromTop="14" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1330" fromTop="20" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1097" fromTop="18" />
     <File id="35A45345-AA77-4FB1-8B65-41C8A3861025/f:chromakey.fx" caret="1337" fromTop="24" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5622" fromTop="12" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5860" fromTop="16" />
-    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5604" fromTop="10" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5727" fromTop="12" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5967" fromTop="16" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5711" fromTop="10" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="5506" fromTop="6" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="4795" fromTop="13" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="3432" fromTop="18" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="1988" fromTop="20" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="1474" fromTop="6" />
+    <File id="EA73A7BA-E7DF-4BEC-A8EE-0B2ABA660511/f:Game1.cs" caret="1214" fromTop="1" />
   </RecentEdits>
 </RecentFiles>

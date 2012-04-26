@@ -35,12 +35,13 @@ namespace GPUImgProc
         {
             graphics = new GraphicsDeviceManager(this);
             // Set back buffer resolution  
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1920;
+            graphics.PreferredBackBufferHeight = 1080;
             clampState = new SamplerState();
             clampState.AddressU = TextureAddressMode.Clamp;
             clampState.AddressV = TextureAddressMode.Clamp;
             Content.RootDirectory = "Content";
+            graphics.IsFullScreen = true;
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace GPUImgProc
             
 
             base.Initialize();
+            
         }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace GPUImgProc
 
             scrHeight = graphics.GraphicsDevice.PresentationParameters.BackBufferHeight;
             scrWidth = graphics.GraphicsDevice.PresentationParameters.BackBufferWidth;
+            
 
             // TODO: use this.Content to load your game content here
         }
@@ -114,6 +117,9 @@ namespace GPUImgProc
             if (Keyboard.GetState().IsKeyDown(Keys.Up) && !previousState.IsKeyDown(Keys.Up))
                 currentTechnique = (currentTechnique + sobel.Techniques.Count - 1) % sobel.Techniques.Count;
 
+            if(Keyboard.GetState().IsKeyDown(Keys.Escape))
+                this.Exit();
+
             previousState = Keyboard.GetState();
 
             // TODO: Add your update logic here
@@ -139,7 +145,7 @@ namespace GPUImgProc
         private void DrawImage()
         {
 
-           // graphics.GraphicsDevice.SamplerStates[0] = clampState;
+           
             sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
             sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
 
