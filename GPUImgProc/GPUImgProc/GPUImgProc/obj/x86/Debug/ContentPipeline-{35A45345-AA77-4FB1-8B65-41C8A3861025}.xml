@@ -8,7 +8,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb</Output>
-      <Time>2012-04-25T09:59:54.3411397-05:00</Time>
+      <Time>2012-04-26T10:57:43.3015145-05:00</Time>
     </Item>
     <Item>
       <Source>chromakey.fx</Source>

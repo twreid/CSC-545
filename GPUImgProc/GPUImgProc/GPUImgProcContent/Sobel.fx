@@ -1,4 +1,6 @@
 Texture xRenderedScene;
+float height;
+float width;
  
 sampler TextureSampler = sampler_state
 {
@@ -58,8 +60,8 @@ float4 PSBlackWhite(VertexShaderOutput input) : COLOR0
 
 float4 PSSmoothen(VertexShaderOutput input) : COLOR0
 {
- float hPixel = 1.0f / 1280.0f;
- float vPixel = 1.0f / 720.0f;
+ float hPixel = 1.0f / height;
+ float vPixel = 1.0f / width;
  
  float3 color = float3(0, 0, 0);
  
@@ -81,8 +83,8 @@ float4 PSSmoothen(VertexShaderOutput input) : COLOR0
 }
 float4 PSLaplacian(VertexShaderOutput input) : COLOR0
 {
- float hPixel = 1.0f / 1280.0f;
- float vPixel = 1.0f / 720.0f;
+ float hPixel = 1.0f / height;
+ float vPixel = 1.0f / width;
  
  float3 color = float3(0, 0, 0);
  

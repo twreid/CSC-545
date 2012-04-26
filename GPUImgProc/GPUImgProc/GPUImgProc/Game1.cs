@@ -25,7 +25,6 @@ namespace GPUImgProc
         Effect sobel;
         int scrHeight;
         int scrWidth;
-        private SamplerState clampState;
         VertexPositionTexture[] vertices;
         Int32 currentTechnique = 0;
         KeyboardState previousState = Keyboard.GetState();
@@ -37,9 +36,6 @@ namespace GPUImgProc
             // Set back buffer resolution  
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
-            clampState = new SamplerState();
-            clampState.AddressU = TextureAddressMode.Clamp;
-            clampState.AddressV = TextureAddressMode.Clamp;
             Content.RootDirectory = "Content";
             graphics.IsFullScreen = true;
         }
@@ -147,6 +143,8 @@ namespace GPUImgProc
 
            
             sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
+            sobel.Parameters["height"].SetValue((float)scrHeight);
+            sobel.Parameters["width"].SetValue((float)scrWidth);
             sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
 
             sobel.CurrentTechnique.Passes[0].Apply();
