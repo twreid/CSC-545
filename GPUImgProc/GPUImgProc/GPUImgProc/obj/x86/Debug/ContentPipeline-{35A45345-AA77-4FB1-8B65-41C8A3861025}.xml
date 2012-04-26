@@ -46,6 +46,33 @@
       <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromaback.xnb</Output>
       <Time>2012-04-25T10:23:07.7721742-05:00</Time>
     </Item>
+    <Item>
+      <Source>knights.jpg</Source>
+      <Name>knights</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\knights.xnb</Output>
+      <Time>2012-04-26T11:11:39.5932862-05:00</Time>
+    </Item>
+    <Item>
+      <Source>bathtub.jpg</Source>
+      <Name>bathtub</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\bathtub.xnb</Output>
+      <Time>2012-04-26T11:21:21.7605842-05:00</Time>
+    </Item>
+    <Item>
+      <Source>vampire.jpg</Source>
+      <Name>vampire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\vampire.xnb</Output>
+      <Time>2012-04-26T11:23:59.8676274-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{35A45345-AA77-4FB1-8B65-41C8A3861025}</ContentProjectGUID>

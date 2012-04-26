@@ -9,3 +9,6 @@ C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\ResolveAssemblyR
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.exe
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\GPUImgProc.pdb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\knights.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\bathtub.xnb
+C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\vampire.xnb

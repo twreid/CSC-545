@@ -19,6 +19,7 @@ namespace GPUImgProc
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D imageToProcess;
+        private Texture2D[] images;
         Texture2D greenScreen;
         Texture2D backScreen;
         Effect chroma;
@@ -27,6 +28,7 @@ namespace GPUImgProc
         int scrWidth;
         VertexPositionTexture[] vertices;
         Int32 currentTechnique = 0;
+        private Int32 currentImage = 0;
         KeyboardState previousState = Keyboard.GetState();
 
 
@@ -63,8 +65,13 @@ namespace GPUImgProc
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            images = new Texture2D[10];
 
-            imageToProcess = this.Content.Load<Texture2D>("batman");
+            images[0] = this.Content.Load<Texture2D>("batman");
+            images[1] = this.Content.Load<Texture2D>("knights");
+            images[2] = this.Content.Load<Texture2D>("bathtub");
+            images[3] = this.Content.Load<Texture2D>("vampire");
+
             greenScreen = this.Content.Load<Texture2D>("greenscreen");
             backScreen = this.Content.Load<Texture2D>("chromaback");
             sobel = this.Content.Load<Effect>("Sobel");
@@ -113,6 +120,12 @@ namespace GPUImgProc
             if (Keyboard.GetState().IsKeyDown(Keys.Up) && !previousState.IsKeyDown(Keys.Up))
                 currentTechnique = (currentTechnique + sobel.Techniques.Count - 1) % sobel.Techniques.Count;
 
+            if (Keyboard.GetState().IsKeyDown(Keys.Right) && !previousState.IsKeyDown(Keys.Right))
+                currentImage = (currentImage + 1)%10;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Left) && !previousState.IsKeyDown(Keys.Left))
+                currentImage = (currentImage + 9) % 10;
+
             if(Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
@@ -141,7 +154,7 @@ namespace GPUImgProc
         private void DrawImage()
         {
 
-           
+            imageToProcess = images[currentImage];
             sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
             sobel.Parameters["height"].SetValue((float)scrHeight);
             sobel.Parameters["width"].SetValue((float)scrWidth);
