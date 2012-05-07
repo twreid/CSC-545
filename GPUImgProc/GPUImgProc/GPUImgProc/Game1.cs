@@ -30,6 +30,7 @@ namespace GPUImgProc
         Int32 currentTechnique = 0;
         private Int32 currentImage = 0;
         KeyboardState previousState = Keyboard.GetState();
+        private bool IsChroma = false;
 
 
         public Game1()
@@ -71,9 +72,16 @@ namespace GPUImgProc
             images[1] = this.Content.Load<Texture2D>("knights");
             images[2] = this.Content.Load<Texture2D>("bathtub");
             images[3] = this.Content.Load<Texture2D>("vampire");
+            images[4] = this.Content.Load<Texture2D>("spaceship");
+            images[5] = this.Content.Load<Texture2D>("cat");
+            images[6] = this.Content.Load<Texture2D>("crysis");
+            images[7] = this.Content.Load<Texture2D>("shells");
+            images[8] = this.Content.Load<Texture2D>("starcraft2");
+            images[9] = this.Content.Load<Texture2D>("enterprise");
+            
+           
 
             greenScreen = this.Content.Load<Texture2D>("greenscreen");
-            backScreen = this.Content.Load<Texture2D>("chromaback");
             sobel = this.Content.Load<Effect>("Sobel");
             chroma = this.Content.Load<Effect>("chromakey");
 
@@ -129,6 +137,9 @@ namespace GPUImgProc
             if(Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.C) && !previousState.IsKeyDown(Keys.C))
+                IsChroma = !IsChroma;
+
             previousState = Keyboard.GetState();
 
             // TODO: Add your update logic here
@@ -153,20 +164,31 @@ namespace GPUImgProc
 
         private void DrawImage()
         {
-
             imageToProcess = images[currentImage];
-            sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
-            sobel.Parameters["height"].SetValue((float)scrHeight);
-            sobel.Parameters["width"].SetValue((float)scrWidth);
-            sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
 
-            sobel.CurrentTechnique.Passes[0].Apply();
+            if(IsChroma)
+            {
+                chroma.Parameters["green"].SetValue(greenScreen);
+                chroma.Parameters["back"].SetValue(imageToProcess);
 
-            /*chroma.Parameters["green"].SetValue(greenScreen);
-            chroma.Parameters["back"].SetValue(backScreen);
+                chroma.CurrentTechnique = chroma.Techniques["Chroma"];
+                chroma.CurrentTechnique.Passes[0].Apply();
 
-            chroma.CurrentTechnique = chroma.Techniques["Chroma"];
-            chroma.CurrentTechnique.Passes[0].Apply();*/
+            }
+            else
+            {
+                sobel.Parameters["xRenderedScene"].SetValue(imageToProcess);
+                sobel.Parameters["height"].SetValue((float)scrHeight);
+                sobel.Parameters["width"].SetValue((float)scrWidth);
+                sobel.CurrentTechnique = sobel.Techniques[currentTechnique];
+
+                sobel.CurrentTechnique.Passes[0].Apply();
+            }
+
+            
+            
+
+            
             graphics.GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>(PrimitiveType.TriangleStrip, vertices, 0, 2);
             
             //spriteBatch.Draw(imageToProcess, rec, Color.White);

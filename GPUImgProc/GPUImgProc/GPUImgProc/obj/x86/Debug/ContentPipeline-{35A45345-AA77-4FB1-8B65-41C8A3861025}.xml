@@ -38,15 +38,6 @@
       <Time>2012-04-25T10:22:18.4546259-05:00</Time>
     </Item>
     <Item>
-      <Source>chromaback.jpg</Source>
-      <Name>chromaback</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromaback.xnb</Output>
-      <Time>2012-04-25T10:23:07.7721742-05:00</Time>
-    </Item>
-    <Item>
       <Source>knights.jpg</Source>
       <Name>knights</Name>
       <Importer>TextureImporter</Importer>
@@ -72,6 +63,60 @@
       <Options>None</Options>
       <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\vampire.xnb</Output>
       <Time>2012-04-26T11:23:59.8676274-05:00</Time>
+    </Item>
+    <Item>
+      <Source>spaceship.jpg</Source>
+      <Name>spaceship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\spaceship.xnb</Output>
+      <Time>2012-05-04T10:43:56.4503815-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat.jpg</Source>
+      <Name>cat</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\cat.xnb</Output>
+      <Time>2012-05-07T10:46:48.2577446-05:00</Time>
+    </Item>
+    <Item>
+      <Source>crysis.jpg</Source>
+      <Name>crysis</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\crysis.xnb</Output>
+      <Time>2012-05-07T10:49:19.6864091-05:00</Time>
+    </Item>
+    <Item>
+      <Source>shells.jpg</Source>
+      <Name>shells</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\shells.xnb</Output>
+      <Time>2012-05-07T10:52:50.6574939-05:00</Time>
+    </Item>
+    <Item>
+      <Source>enterprise.jpg</Source>
+      <Name>enterprise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\enterprise.xnb</Output>
+      <Time>2012-05-07T10:56:07.4696977-05:00</Time>
+    </Item>
+    <Item>
+      <Source>starcraft2.jpg</Source>
+      <Name>starcraft2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\starcraft2.xnb</Output>
+      <Time>2012-05-07T10:56:07.4726979-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
