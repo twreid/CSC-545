@@ -1,1 +1,2 @@
 C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProcContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProcContent\obj\x86\Debug\ResolveAssemblyReference.cache
