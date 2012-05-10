@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb</Output>
-      <Time>2012-04-26T10:57:43.3015145-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\Sobel.xnb</Output>
+      <Time>2012-05-07T15:06:14.9563142-05:00</Time>
     </Item>
     <Item>
       <Source>chromakey.fx</Source>
@@ -16,8 +16,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromakey.xnb</Output>
-      <Time>2012-04-25T10:38:13.8454099-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\chromakey.xnb</Output>
+      <Time>2012-05-07T15:06:14.9713151-05:00</Time>
     </Item>
     <Item>
       <Source>Batman Edge Detect Test.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb</Output>
-      <Time>2012-04-24T12:01:05.617507-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\batman.xnb</Output>
+      <Time>2012-05-07T15:06:14.9473137-05:00</Time>
     </Item>
     <Item>
       <Source>greenscreen.jpg</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\greenscreen.xnb</Output>
-      <Time>2012-04-25T10:22:18.4546259-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\greenscreen.xnb</Output>
+      <Time>2012-05-07T15:06:14.9813157-05:00</Time>
     </Item>
     <Item>
       <Source>knights.jpg</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\knights.xnb</Output>
-      <Time>2012-04-26T11:11:39.5932862-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\knights.xnb</Output>
+      <Time>2012-05-07T15:06:14.9833158-05:00</Time>
     </Item>
     <Item>
       <Source>bathtub.jpg</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\bathtub.xnb</Output>
-      <Time>2012-04-26T11:21:21.7605842-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\bathtub.xnb</Output>
+      <Time>2012-05-07T15:06:14.9593144-05:00</Time>
     </Item>
     <Item>
       <Source>vampire.jpg</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\vampire.xnb</Output>
-      <Time>2012-04-26T11:23:59.8676274-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\vampire.xnb</Output>
+      <Time>2012-05-07T15:06:15.0343187-05:00</Time>
     </Item>
     <Item>
       <Source>spaceship.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\spaceship.xnb</Output>
-      <Time>2012-05-04T10:43:56.4503815-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\spaceship.xnb</Output>
+      <Time>2012-05-07T15:06:15.0293184-05:00</Time>
     </Item>
     <Item>
       <Source>cat.jpg</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\cat.xnb</Output>
-      <Time>2012-05-07T10:46:48.2577446-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\cat.xnb</Output>
+      <Time>2012-05-07T15:06:14.9623146-05:00</Time>
     </Item>
     <Item>
       <Source>crysis.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\crysis.xnb</Output>
-      <Time>2012-05-07T10:49:19.6864091-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\crysis.xnb</Output>
+      <Time>2012-05-07T15:06:14.9743153-05:00</Time>
     </Item>
     <Item>
       <Source>shells.jpg</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\shells.xnb</Output>
-      <Time>2012-05-07T10:52:50.6574939-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\shells.xnb</Output>
+      <Time>2012-05-07T15:06:15.0263182-05:00</Time>
     </Item>
     <Item>
       <Source>enterprise.jpg</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\enterprise.xnb</Output>
-      <Time>2012-05-07T10:56:07.4696977-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\enterprise.xnb</Output>
+      <Time>2012-05-07T15:06:14.9793156-05:00</Time>
     </Item>
     <Item>
       <Source>starcraft2.jpg</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\starcraft2.xnb</Output>
-      <Time>2012-05-07T10:56:07.4726979-05:00</Time>
+      <Output>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\starcraft2.xnb</Output>
+      <Time>2012-05-07T15:06:15.0313185-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -125,10 +125,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProcContent\</RootDirectory>
-      <LoggerRootDirectory>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\devel\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProcContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Dictator\Documents\CSC-545\CSC-545\GPUImgProc\GPUImgProc\GPUImgProc\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -157,7 +157,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-04-11T10:26:39.5726994-05:00</Value>
+        <Value>2012-04-23T17:56:49.7061879-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
