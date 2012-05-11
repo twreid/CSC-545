@@ -30,6 +30,7 @@ namespace WpfApplication1
                                            };
 
         private bool _isDrawing = false;
+        private bool _isChromaKey = false;
 
         private int _currentTechnique = 0;
         private int _currentImage = 0;
@@ -75,6 +76,7 @@ namespace WpfApplication1
                         _currentImage = (_currentImage + _images.Length + 1) % _images.Length;
                     break;
                     case Key.C:
+                    _isChromaKey = !_isChromaKey;
                     break;
                     case Key.Escape:
                         this.Close();
@@ -98,22 +100,52 @@ namespace WpfApplication1
             var image = Image.FromFile(img);
             var tempImg = new Bitmap(img);
 
-            switch (tech)
+            if (_isChromaKey)
             {
-                case "normal":
-                    break;
-                case "greyscale":
-                    tempImg = GreyScale(tempImg);
-                    break;
-                case "blackandwhite":
-                    tempImg = BlackWhite(tempImg);
-                    break;
-                default:
-                    break;
+                tempImg = ChromaKey(tempImg);
+            }
+            else
+            {
+                switch (tech)
+                {
+                    case "normal":
+                        break;
+                    case "greyscale":
+                        tempImg = GreyScale(tempImg);
+                        break;
+                    case "blackandwhite":
+                        tempImg = BlackWhite(tempImg);
+                        break;
+                    default:
+                        break;
+                }
             }
             DisplayImage = tempImg;
             _isDrawing = false;
 
+        }
+
+        private Bitmap ChromaKey(Bitmap bit)
+        {
+            var newImg = new Bitmap(bit.Width, bit.Height);
+            var temp = Image.FromFile("greenscreen.jpg");
+            var foreground = new Bitmap(temp);
+
+            for (int x = 0; x < bit.Width; ++x)
+            {
+                for (int y = 0; y < bit.Height; ++y)
+                {
+                    var backColor = bit.GetPixel(x, y);
+                    var foreColor = foreground.GetPixel(x, y);
+
+                    var col = (foreColor.G > (foreColor.R + foreColor.B)) ? backColor : foreColor;
+
+                    newImg.SetPixel(x,y,col);
+
+                }
+            }
+            return newImg;
+            
         }
 
         private Bitmap GreyScale(Bitmap bit) {
