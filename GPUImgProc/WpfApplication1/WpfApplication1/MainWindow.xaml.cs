@@ -1,34 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Drawing;
+using System.ComponentModel;
+using System.IO;
 using System.Drawing.Imaging;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace ImageEditing
 {
-    public partial class Window1 : Window
+    public partial class Window1 : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private BitmapImage _image;
+
+        public BitmapImage DisplayImage
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                OnPropertyChanged("DisplayImage");
+            }
+        }
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if(handler != null)
+                handler(this, new PropertyChangedEventArgs(name));
+        }
+
+
         public Window1()
         {
             InitializeComponent();
+            MainImage.DataContext = this;
 
             int width = 300;
             int height = 300;
 
-            // Create a writeable bitmap (which is a valid WPF Image Source
+            Image img = Image.FromFile(@"D:\development\desktop\csc545\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\knights.jpg");
+            var tempImg = new Bitmap(img);
+
+            var imageMem = new MemoryStream();
+
+            tempImg.Save(imageMem, ImageFormat.Jpeg);
+
+            var bmp = new BitmapImage();
+            bmp.BeginInit();
+            bmp.StreamSource = new MemoryStream(imageMem.ToArray());
+            bmp.EndInit();
+            DisplayImage = bmp;
+
+            //MainImage.Source = bmp;
+
+        /*    // Create a writeable bitmap (which is a valid WPF Image Source
             WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
             Bitmap bit = new Bitmap("knights");
             // Create an array of pixels to contain pixel color values
@@ -58,7 +85,7 @@ namespace ImageEditing
             bitmap.WritePixels(new Int32Rect(0, 0, 300, 300), pixels, width * 4, 0);
 
             // set image source to the new bitmap
-            this.MainImage.Source = bitmap;
+            //this.MainImage.Source = bitmap;*/
         }
 
         private uint[] greyScale(Bitmap bit) {
@@ -175,5 +202,7 @@ namespace ImageEditing
             }
             return pixels;
         }
+
+        
     }
 }
