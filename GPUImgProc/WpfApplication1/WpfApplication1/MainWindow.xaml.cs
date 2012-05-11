@@ -13,7 +13,7 @@ namespace WpfApplication1
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private string[] _images = new string[]
+        private readonly string[] _images = new string[]
                                        {
                                            @"bathtub.jpg",
                                            @"knights.jpg",
@@ -21,7 +21,7 @@ namespace WpfApplication1
                                            @"Batman Edge Detect Test.jpg"
                                        };
 
-        private string[] _techniques = new string[]
+        private readonly string[] _techniques = new string[]
                                            {
                                                "normal",
                                                "greyscale",
@@ -53,7 +53,7 @@ namespace WpfApplication1
                 handler(this, new PropertyChangedEventArgs(name));
         }
 
-        private void KeyUp(object sender, KeyEventArgs e)
+        private new void KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.Key)
             {
@@ -76,6 +76,9 @@ namespace WpfApplication1
                     break;
                     case Key.C:
                     break;
+                    case Key.Escape:
+                        this.Close();
+                    break;
             }
 
             Draw(_techniques[_currentTechnique], _images[_currentImage]);
@@ -87,44 +90,7 @@ namespace WpfApplication1
 
             EventManager.RegisterClassHandler(typeof(Window), Keyboard.KeyUpEvent, new KeyEventHandler(KeyUp), true);
             MainImage.DataContext = this;
-
-            /*int width = 300;
-            int height = 300;*/
-
-            
-            
-            /*    // Create a writeable bitmap (which is a valid WPF Image Source
-            WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
-            Bitmap bit = new Bitmap("knights");
-            // Create an array of pixels to contain pixel color values
-            uint[] pixels = new uint[width * height];
-
-            int red;
-            int green;
-            int blue;
-            int alpha;
-
-            for (int x = 0; x < width; ++x)
-            {
-                for (int y = 0; y < height; ++y)
-                {
-                    int i = width * y + x;
-
-                    red = 0;
-                    green = 255 * y / height;
-                    blue = 255 * (width - x) / width;
-                    alpha = 255;
-
-                    pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
-                }
-            }
-
-            // apply pixels to bitmap
-            bitmap.WritePixels(new Int32Rect(0, 0, 300, 300), pixels, width * 4, 0);
-
-            // set image source to the new bitmap
-            //this.MainImage.Source = bitmap;*/
-        }
+       }
 
         private void Draw(string tech, string img)
         {
@@ -138,6 +104,9 @@ namespace WpfApplication1
                     break;
                 case "greyscale":
                     tempImg = GreyScale(tempImg);
+                    break;
+                case "blackandwhite":
+                    tempImg = BlackWhite(tempImg);
                     break;
                 default:
                     break;
@@ -165,47 +134,27 @@ namespace WpfApplication1
             return temp;
         }
 
-        private uint[] bw(Bitmap bit) {
-            int height = bit.Height;
-            int width = bit.Width;
-
-            uint[] pixels = new uint[width * height];
-
-            int red;
-            int green;
-            int blue;
-            int alpha;
-
-            for (int x = 0; x < width; ++x)
+        private Bitmap BlackWhite(Bitmap bit) {
+           
+            var tempBit = new Bitmap(bit.Width, bit.Height);
+            for (int x = 0; x < bit.Width; ++x)
             {
-                for (int y = 0; y < height; ++y)
+                for (int y = 0; y < bit.Height; ++y)
                 {
-                    int i = width * y + x;
-                    System.Drawing.Color color = bit.GetPixel(x, y);
-                    red = (int)(color.R);
-                    green = (int)(color.G);
-                    blue = (int)(color.B);
-                    alpha = color.A;
+                    var color = bit.GetPixel(x, y);
                     if (color.R + color.G + color.B > 127)
                     {
-                        red = 255;
-                        green = 255;
-                        blue = 255;
-                        alpha = color.A;
-                        pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
+                        tempBit.SetPixel(x, y, Color.FromArgb(255,255,255));
                     }
-                    else { 
-                        red = 0;
-                        green = 0;
-                        blue = 0;
-                        alpha = color.A;
-                        pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
+                    else {
+
+                        tempBit.SetPixel(x, y, Color.FromArgb(0, 0, 0));
                     }
                    
                 }
             }
 
-            return pixels;
+            return tempBit;
         }
 
         private uint[] laPlace(Bitmap bit)
