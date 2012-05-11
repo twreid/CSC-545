@@ -15,10 +15,24 @@ namespace WpfApplication1
 
         private string[] _images = new string[]
                                        {
-                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\bathtub.jpg",
-                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\knights.jpg",
-                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\vampire.jpg"
+                                           @"bathtub.jpg",
+                                           @"knights.jpg",
+                                           @"vampire.jpg",
+                                           @"Batman Edge Detect Test.jpg"
                                        };
+
+        private string[] _techniques = new string[]
+                                           {
+                                               "normal",
+                                               "greyscale",
+                                               "blackandwhite",
+                                               "laplace"
+                                           };
+
+        private bool _isDrawing = false;
+
+        private int _currentTechnique = 0;
+        private int _currentImage = 0;
 
         private Bitmap _image;
 
@@ -43,22 +57,28 @@ namespace WpfApplication1
         {
             switch (e.Key)
             {
-                    /*if (Keyboard.GetState().IsKeyDown(Keys.Down) && !previousState.IsKeyDown(Keys.Down))
-                currentTechnique = (currentTechnique + 1) % sobel.Techniques.Count;
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Up) && !previousState.IsKeyDown(Keys.Up))
-                currentTechnique = (currentTechnique + sobel.Techniques.Count - 1) % sobel.Techniques.Count;*/
+                    
                     case Key.Up:
+                    if(!_isDrawing)
+                        _currentTechnique = (_currentTechnique + _techniques.Length - 1)%_techniques.Length;
                     break;
                     case Key.Down:
+                    if (!_isDrawing)
+                        _currentTechnique = (_currentTechnique + _techniques.Length + 1) % _techniques.Length;
                     break;
                     case Key.Left:
+                    if (!_isDrawing)
+                        _currentImage = (_currentImage + _images.Length - 1) % _images.Length;
                     break;
                     case Key.Right:
+                    if (!_isDrawing)
+                        _currentImage = (_currentImage + _images.Length + 1) % _images.Length;
                     break;
                     case Key.C:
                     break;
             }
+
+            Draw(_techniques[_currentTechnique], _images[_currentImage]);
         }
 
         public Window1()
@@ -104,6 +124,27 @@ namespace WpfApplication1
 
             // set image source to the new bitmap
             //this.MainImage.Source = bitmap;*/
+        }
+
+        private void Draw(string tech, string img)
+        {
+            _isDrawing = true;
+            var image = Image.FromFile(img);
+            var tempImg = new Bitmap(img);
+
+            switch (tech)
+            {
+                case "normal":
+                    break;
+                case "greyscale":
+                    tempImg = GreyScale(tempImg);
+                    break;
+                default:
+                    break;
+            }
+            DisplayImage = tempImg;
+            _isDrawing = false;
+
         }
 
         private Bitmap GreyScale(Bitmap bit) {
@@ -213,10 +254,7 @@ namespace WpfApplication1
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            var img = Image.FromFile(@"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\vampire.jpg");
-            var tempImg = new Bitmap(img);
-
-            DisplayImage = GreyScale(tempImg);
+            Draw(_techniques[_currentTechnique], _images[_currentImage]);
         }
 
         
