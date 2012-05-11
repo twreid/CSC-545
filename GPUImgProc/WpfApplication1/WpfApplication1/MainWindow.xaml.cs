@@ -1,20 +1,19 @@
 ﻿using System.Drawing;
 using System.Windows;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.ComponentModel;
 using System.IO;
 using System.Drawing.Imaging;
 
-namespace ImageEditing
+namespace WpfApplication1
 {
     public partial class Window1 : Window, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private BitmapImage _image;
+        private Bitmap _image;
 
-        public BitmapImage DisplayImage
+        public Bitmap DisplayImage
         {
             get { return _image; }
             set
@@ -37,25 +36,12 @@ namespace ImageEditing
             InitializeComponent();
             MainImage.DataContext = this;
 
-            int width = 300;
-            int height = 300;
+            /*int width = 300;
+            int height = 300;*/
 
-            Image img = Image.FromFile(@"D:\development\desktop\csc545\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\knights.jpg");
-            var tempImg = new Bitmap(img);
-
-            var imageMem = new MemoryStream();
-
-            tempImg.Save(imageMem, ImageFormat.Jpeg);
-
-            var bmp = new BitmapImage();
-            bmp.BeginInit();
-            bmp.StreamSource = new MemoryStream(imageMem.ToArray());
-            bmp.EndInit();
-            DisplayImage = bmp;
-
-            //MainImage.Source = bmp;
-
-        /*    // Create a writeable bitmap (which is a valid WPF Image Source
+            
+            
+            /*    // Create a writeable bitmap (which is a valid WPF Image Source
             WriteableBitmap bitmap = new WriteableBitmap(width, height, 96, 96, PixelFormats.Bgra32, null);
             Bitmap bit = new Bitmap("knights");
             // Create an array of pixels to contain pixel color values
@@ -88,32 +74,22 @@ namespace ImageEditing
             //this.MainImage.Source = bitmap;*/
         }
 
-        private uint[] greyScale(Bitmap bit) {
-            int height = bit.Height;
-            int width = bit.Width;
+        private Bitmap GreyScale(Bitmap bit) {
 
-            uint[] pixels = new uint[width * height];
+            var temp = new Bitmap(bit.Width, bit.Height);
 
-            int red;
-            int green;
-            int blue;
-            int alpha;
-
-            for (int x = 0; x < width; ++x)
+            for (int x = 0; x < bit.Width; ++x)
             {
-                for (int y = 0; y < height; ++y)
+                for (int y = 0; y < bit.Height; ++y)
                 {
-                    int i = width * y + x;
-                    System.Drawing.Color color = bit.GetPixel(x, y);
-                    red = (int)(color.R * 0.30);
-                    green = (int)(color.G * 0.59);
-                    blue = (int)(color.B * 0.11);
-                    alpha = color.A;
+                   var color = bit.GetPixel(x, y);
 
-                    pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
+                    int luma = (int)(color.R * 0.3 + color.G * 0.59 + color.B * 0.11);
+                    
+                    temp.SetPixel(x, y, Color.FromArgb(luma, luma, luma));
                 }
             }
-            return pixels;
+            return temp;
         }
 
         private uint[] bw(Bitmap bit) {
@@ -201,6 +177,14 @@ namespace ImageEditing
                 }
             }
             return pixels;
+        }
+
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            var img = Image.FromFile(@"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\vampire.jpg");
+            var tempImg = new Bitmap(img);
+
+            DisplayImage = GreyScale(tempImg);
         }
 
         
