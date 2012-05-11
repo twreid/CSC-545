@@ -142,15 +142,12 @@ namespace WpfApplication1
                 for (int y = 0; y < bit.Height; ++y)
                 {
                     var color = bit.GetPixel(x, y);
-                    if (color.R + color.G + color.B > 127)
-                    {
-                        tempBit.SetPixel(x, y, Color.FromArgb(255,255,255));
-                    }
-                    else {
+                    var col = ((color.R*0.3 + color.G*0.59 + color.B*0.11) > 0.5f)
+                                  ? Color.FromArgb(255, 255, 255)
+                                  : Color.FromArgb(0, 0, 0);
 
-                        tempBit.SetPixel(x, y, Color.FromArgb(0, 0, 0));
-                    }
-                   
+                    tempBit.SetPixel(x,y,col);
+
                 }
             }
 
