@@ -1,5 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.ComponentModel;
 using System.IO;
@@ -10,6 +12,13 @@ namespace WpfApplication1
     public partial class Window1 : Window, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private string[] _images = new string[]
+                                       {
+                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\bathtub.jpg",
+                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\knights.jpg",
+                                           @"C:\devel\CSC-545\GPUImgProc\WpfApplication1\WpfApplication1\vampire.jpg"
+                                       };
 
         private Bitmap _image;
 
@@ -30,10 +39,33 @@ namespace WpfApplication1
                 handler(this, new PropertyChangedEventArgs(name));
         }
 
+        private void KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                    /*if (Keyboard.GetState().IsKeyDown(Keys.Down) && !previousState.IsKeyDown(Keys.Down))
+                currentTechnique = (currentTechnique + 1) % sobel.Techniques.Count;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Up) && !previousState.IsKeyDown(Keys.Up))
+                currentTechnique = (currentTechnique + sobel.Techniques.Count - 1) % sobel.Techniques.Count;*/
+                    case Key.Up:
+                    break;
+                    case Key.Down:
+                    break;
+                    case Key.Left:
+                    break;
+                    case Key.Right:
+                    break;
+                    case Key.C:
+                    break;
+            }
+        }
 
         public Window1()
         {
             InitializeComponent();
+
+            EventManager.RegisterClassHandler(typeof(Window), Keyboard.KeyUpEvent, new KeyEventHandler(KeyUp), true);
             MainImage.DataContext = this;
 
             /*int width = 300;
