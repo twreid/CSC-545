@@ -26,7 +26,8 @@ namespace WpfApplication1
                                                "normal",
                                                "greyscale",
                                                "blackandwhite",
-                                               "laplace"
+                                               "laplace",
+                                               "Chroma"
                                            };
 
         private bool _isDrawing = false;
@@ -116,6 +117,12 @@ namespace WpfApplication1
                     case "blackandwhite":
                         tempImg = BlackWhite(tempImg);
                         break;
+                    case "laplace":
+                        tempImg = laplace(tempImg);
+                        break;
+                    case "Chroma":
+                        tempImg = ChromaKey(tempImg);
+                        break;
                     default:
                         break;
                 }
@@ -166,7 +173,28 @@ namespace WpfApplication1
             return temp;
         }
 
-        private Bitmap BlackWhite(Bitmap bit) {
+        private Bitmap BlackWhite(Bitmap bit)
+        {
+            Bitmap ret = new Bitmap(bit.Width, bit.Height);
+            for (int x = 0; x < bit.Width; x++)
+            {
+                for (int y = 0; y < bit.Height; y++)
+                {
+                    Color c = bit.GetPixel(x, y);
+                    int r = (int)((c.R + c.G + c.B) / 3);
+                    int g = 0;
+                    int b = 0;
+                    if (r > 127) { r = 255; g = 255; b = 255; }
+                    else { r = 0; g = 0; b = 0; }
+
+
+                    ret.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+            return ret;
+        }
+
+      /*  private Bitmap BlackWhite(Bitmap bit) {
            
             var tempBit = new Bitmap(bit.Width, bit.Height);
             for (int x = 0; x < bit.Width; ++x)
@@ -184,50 +212,43 @@ namespace WpfApplication1
             }
 
             return tempBit;
-        }
+        }*/
 
-        private uint[] laPlace(Bitmap bit)
+        private Bitmap laplace(Bitmap bit)
         {
-            int height = bit.Height;
-            int width = bit.Width;
+            //double[] kernel = { -1.0, -1.0, -1.0 ,-1.0, 8.0, -1.0, -1.0, -1.0, -1.0 };
+            double r, g, b, z;
+            int midX = 1;//kernel.GetLength(1) / 2;
+            int midY = 1;//kernel.Length / 2;
+            Bitmap ret = new Bitmap(bit.Width, bit.Height);
 
-            uint[] pixels = new uint[width * height];
-
-            int red;
-            int green;
-            int blue;
-            int alpha;
-
-            for (int x = 0; x < width; ++x)
+            for (int y = 1; y < bit.Height - 1; y++)
             {
-                for (int y = 0; y < height; ++y)
+                for (int x = 1; x < bit.Width - 1; x++)
                 {
-                    int i = width * y + x;
-                    System.Drawing.Color color = bit.GetPixel(x, y);
-                    red = (int)(color.R);
-                    green = (int)(color.G);
-                    blue = (int)(color.B);
-                    alpha = color.A;
-                    if (color.R + color.G + color.B > 127)
+                    r = 0; g = 0; b = 0;
+                    for (int i = -1; i < 2; i++)
                     {
-                        red = 255;
-                        green = 255;
-                        blue = 255;
-                        alpha = color.A;
-                        pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
+                        for (int j = -1; j < 2; j++)
+                        {
+                            Color col = bit.GetPixel(x + j, y + i);
+                            if (((midX + j) * 3) + (midY + i) == 4) { z = 8.0; }
+                            else { z = -1.0; }
+                            r += col.R * z;
+                            g += col.G * z;
+                            b += col.B * z;
+                        }
                     }
-                    else
-                    {
-                        red = 0;
-                        green = 0;
-                        blue = 0;
-                        alpha = color.A;
-                        pixels[i] = (uint)((blue << 24) + (green << 16) + (red << 8) + alpha);
-                    }
-
+                    if (r > 255) r = 255;
+                    else if (r < 0) r = 0;
+                    if (g > 255) g = 255;
+                    else if (g < 0) g = 0;
+                    if (b > 255) b = 255;
+                    else if (b < 0) b = 0;
+                    ret.SetPixel(x, y, Color.FromArgb((int)r, (int)g, (int)b));
                 }
             }
-            return pixels;
+            return ret;
         }
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
